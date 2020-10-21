@@ -1,4 +1,4 @@
-package com.floreo.bbah.model;
+package com.flor;
 
 import de.ralleytn.simple.json.JSONObject;
 
