@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
 public class Bot {
 
     // TODO: implement your bot logic!
@@ -28,6 +29,31 @@ public class Bot {
             }, 0, 1000 * 60 * minutes);
 
     }
+
+    public String nbaFacts(){
+
+        String[] nbaFacts = new String[]{
+                "Stephen Curry is the first unanimous mvp",
+                "Shaquille O'Neal made only one three-point shot ever",
+                "Air Jordans were once banned from the NBA",
+                "Kobe Bryant's first NBA contract was co-signed by his parents",
+                "The shortest player and the tallest player in NBA history played once for the same team",
+                "LeBron James eats and writes with his left hand",
+                "60% of NBA players become broke after 5 years of retirement",
+                "There has never been a quintuple-double in NBA",
+                "Shaq challenged Hakeem to a one-on-one",
+                "The shortest player in NBA history blocked 39 shots",
+                "Paul Pierce was stabbed 11 times and still played every game in the 2000-01 season"};
+
+        Random r = new Random();
+        int randomNumber=r.nextInt(nbaFacts.length);
+        Slack.sendMessage(nbaFacts[randomNumber]);
+
+        return nbaFacts[randomNumber];
+
+    }
+
+
 
     /**
      * Sample method: tests the Slack API. Prints a message indicating success or failure.
@@ -107,4 +133,5 @@ public class Bot {
             System.err.print("Error sending message: " + deleteMessageResponse.getError());
         }
     }
+
 }
